@@ -1,34 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PetFax | Submit Facts</title>
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='style.css') }}"
-    />
-  </head>
-  <body>
-    <div class="container">
-      <h1>Submit Fax</h1>
-      <div class="callout">
-        If you have some fun animal facts you'd like to share, please submit
-        them! We may use them in the future.
-      </div>
-      <div class="facts-container">
-        <form action="/facts" method="POST">
-          <label for="submitter"><h2>Name</h2></label>
-          <input name="submitter" type="text" />
-          <br />
-          <label for="fact"><h2>Fact</h2></label>
-          <textarea name="fact"></textarea>
-          <br />
-          <input type="submit" value="Submit the Fact" />
-        </form>
-      </div>
-      <a href="/pets">⟨　Go back</a>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  <title>Submit a New Fact</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Submit a Fun Fact</h1>
+    <div class="callout">
+      If you have some fun animal facts you'd like to share, please submit
+      them! We may use them in the future.
     </div>
-  </body>
+
+    <div class="fact-container">
+      <form action="/facts" method="POST">
+        <label for="submitter">Your Name:</label>
+        <input type="text" id="submitter" name="submitter" required /><br /><br />
+
+        <label for="fact">Fun Fact:</label>
+        <textarea id="fact" name="fact" rows="4" cols="50" required></textarea><br /><br />
+
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+
+    <a href="/pets">⟨　Go back</a>
+  </div>
+</body>
+
 </html>
